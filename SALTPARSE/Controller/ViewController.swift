@@ -73,7 +73,7 @@ extension ViewController {
     func setupTableView()  {
     
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+        tableView.separatorInset = .zero
     }
     
     //MARK:UITableView DataSource
@@ -107,6 +107,10 @@ extension ViewController {
         indexPath: IndexPath){
         
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        let listObj = arrayOfList[indexPath.row]
+        vc?.imageStr = listObj.image!
+        vc?.titleStr = listObj.title!
+        vc?.descriptionStr = listObj.description!
         self.navigationController?.pushViewController(vc!, animated: true)
 
     }
