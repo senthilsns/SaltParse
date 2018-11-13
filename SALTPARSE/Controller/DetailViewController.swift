@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var DescriptionView: UITextView!
     
-    var imageStr : String = ""
+    var imageStr : String = "http://dummyimage.com/609x750/0D2637/BCE8DA"
     
     @IBAction func backButtonAction(_ sender: Any) {
         
@@ -25,6 +25,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Image Download and Show to Image
+        
+        self.navigationController?.isNavigationBarHidden = true
         
         saltImageView.downloaded(from:imageStr )
 
@@ -37,7 +39,10 @@ class DetailViewController: UIViewController {
     }
     
 
+    
+
 }
+
 
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {

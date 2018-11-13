@@ -107,10 +107,6 @@ extension ViewController {
         indexPath: IndexPath){
         
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        let listObj = arrayOfList[indexPath.row]
-        vc?.titleLabel?.text = listObj.title!
-        vc?.DescriptionView?.text = listObj.description
-        vc?.imageStr = listObj.image!
         self.navigationController?.pushViewController(vc!, animated: true)
 
     }
